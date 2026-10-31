@@ -22,7 +22,3 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-
-# Raw upload files in root
-*.heic
-*_n.jpg
