@@ -1,13 +1,13 @@
-# 🌸 Tamanna's Friendship & Sports Encouragement Gift Website
+# 🌸 Friendship & Sports Encouragement Gift Website
 
-An elegant, mobile-first interactive digital keepsake created as a personal friendship appreciation and sports encouragement gift for **Tamanna**. Designed with a dreamy botanical aesthetic featuring warm cream, soft ivory, sage green, and pastel floral tones.
+An elegant, mobile-first interactive digital keepsake created as a personal friendship appreciation and sports encouragement gift for a friend. Designed with a dreamy botanical aesthetic featuring warm cream, soft ivory, sage green, and pastel floral tones.
 
 ---
 
 ## ✨ Features & Experience Flow
 
 1. **Screen 1: Welcoming Scene**
-   - Opening heading: *"A little surprise for you, Tamanna! 🌷"*
+   - Opening heading: *"A little surprise for you! 🌷"*
    - Subtitle: *"Because even the strongest people deserve a little encouragement sometimes."*
    - Volume notice: *"Before we begin, turn your volume up and get comfortable. A little surprise is waiting for you!"*
    - Button: *"Let's begin! ♡"*
@@ -22,18 +22,18 @@ An elegant, mobile-first interactive digital keepsake created as a personal frie
    - Colorful falling flower rain flurry with sakura petals, daisies, peach petals, leaves, and sparkles.
 
 4. **Screen 4: Main Greeting Hero**
-   - Heading: *"Hey Tamanna, keep blooming! 🌼"*
+   - Heading: *"Hey, keep blooming! 🌼"*
    - Paragraph: *"Here's a tiny reminder from your friend: you're stronger than you sometimes realise. Every little effort, every tough training session and every challenge you face is helping you become a better version of yourself. Keep believing in yourself!"*
 
 5. **Screen 5: Sports Motivation Section**
-   - Heading: *"To the Strong Girl, Tamanna 💪"*
-   - Dedicated encouragement for her weightlifting, training, and upcoming tournament.
-   - Highlights: *"Lift strong. Play strong. Stay confident. You've got this, Tamanna!"*
+   - Heading: *"To the Strong Girl 💪"*
+   - Dedicated encouragement for weightlifting, training, and an upcoming tournament.
+   - Highlights: *"Lift strong. Play strong. Stay confident. You've got this!"*
    - Delicate sports & strength botanical motifs.
 
 6. **Screen 6: Polaroid Photo Moments**
    - Heading: *"A Few Little Moments 📸"*
-   - 4 real photographs of Tamanna with natural tilts, washi tape, and handwritten captions:
+   - 4 personal photographs with natural tilts, washi tape, and handwritten captions:
      - *"Keep being you!"*
      - *"A little collection of smiles."*
      - *"Strong, cheerful and unstoppable."*
@@ -41,13 +41,13 @@ An elegant, mobile-first interactive digital keepsake created as a personal frie
    - Fullscreen Lightbox with touch swipe gestures on mobile and keyboard navigation.
 
 7. **Screen 7: Vintage Friendship Letter**
-   - Heading: *"A Little Note for You, Tamanna"*
+   - Heading: *"A Little Note for You"*
    - Displayed on cream ruled paper with vintage postal stamp and pressed floral corners.
    - Heartfelt, respectful encouragement letter with interactive typewriter reveal.
    - Signature: *"Your friend, Someone cheering for you! 💚"*
 
 8. **Screen 8: Final Surprise & Interactive Garden**
-   - Heading: *"Go Shine, Tamanna! 🌸"*
+   - Heading: *"Go Shine! 🌸"*
    - Message: *"Your next chapter is waiting. Walk into it with confidence, give your best and make yourself proud. Sending you lots of positive energy for your upcoming tournament!"*
    - Final line: *"Keep growing. Keep getting stronger. Keep blooming."*
    - Interactive touch: Tap anywhere to plant blooming flowers!
