@@ -19,7 +19,7 @@ An elegant, mobile-first interactive digital keepsake created as a personal frie
 
 3. **Screen 3: Magical Entrance & Music Seeking (1:20 / 80s)**
    - Persistent background playback of Alfaz's track starts precisely at **1 minute 20 seconds (80 seconds)**.
-   - Colorful falling flower rain flurry with sakura petals, daisies, peach petals, leaves, and sparkles.
+   - Colorful falling flower rain flurry with sakura petals, daisies, peach petals, leaves, and sparkles behind content.
 
 4. **Screen 4: Main Greeting Hero**
    - Heading: *"Hey, keep blooming! 🌼"*
@@ -31,14 +31,14 @@ An elegant, mobile-first interactive digital keepsake created as a personal frie
    - Highlights: *"Lift strong. Play strong. Stay confident. You've got this!"*
    - Delicate sports & strength botanical motifs.
 
-6. **Screen 6: Polaroid Photo Moments**
+6. **Screen 6: Polaroid Scrapbook Moments**
    - Heading: *"A Few Little Moments 📸"*
    - 4 personal photographs with natural tilts, washi tape, and handwritten captions:
      - *"Keep being you!"*
      - *"A little collection of smiles."*
      - *"Strong, cheerful and unstoppable."*
      - *"Another reason to keep smiling."*
-   - Fullscreen Lightbox with touch swipe gestures on mobile and keyboard navigation.
+   - Clean scrapbook presentation with preserved aspect ratios and zero disruptive modals.
 
 7. **Screen 7: Vintage Friendship Letter**
    - Heading: *"A Little Note for You"*

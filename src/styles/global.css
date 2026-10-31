@@ -173,7 +173,7 @@ button {
   transform: translateX(-50%) rotate(-1deg);
   width: 70px;
   height: 22px;
-  background: rgba(220, 232, 213, 0.7);
+  background: rgba(220, 232, 213, 0.75);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
   backdrop-filter: blur(2px);
   z-index: 5;
@@ -181,32 +181,38 @@ button {
     0% 0%, 5% 40%, 0% 100%,
     95% 100%, 100% 60%, 95% 0%
   );
+  pointer-events: none;
 }
 
 .washi-tape.peach {
-  background: rgba(235, 201, 181, 0.75);
+  background: rgba(235, 201, 181, 0.8);
 }
 
 .washi-tape.pink {
-  background: rgba(232, 199, 204, 0.75);
+  background: rgba(232, 199, 204, 0.8);
 }
 
-/* Polaroid Card Styles */
+.washi-tape.sage {
+  background: rgba(220, 232, 213, 0.85);
+}
+
+/* Polaroid Card Styles - Non-clickable Scrapbook presentation */
 .polaroid-frame {
   background: var(--color-soft-ivory);
-  padding: 12px 12px 18px 12px;
-  border-radius: 4px;
+  padding: 14px 14px 20px 14px;
+  border-radius: 16px;
   box-shadow: var(--shadow-polaroid);
-  border: 1px solid rgba(168, 185, 154, 0.25);
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
+  border: 1px solid rgba(168, 185, 154, 0.3);
   position: relative;
-  cursor: pointer;
+  cursor: default;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
-.polaroid-frame:hover {
-  transform: translateY(-6px) scale(1.02) !important;
-  box-shadow: 0 20px 35px -8px rgba(51, 65, 57, 0.22);
-  z-index: 10;
+@media (hover: hover) {
+  .polaroid-frame:hover {
+    box-shadow: 0 18px 34px -6px rgba(51, 65, 57, 0.18);
+  }
 }
 
 /* Vintage Paper Letter Texture */
@@ -234,4 +240,3 @@ button {
   background: var(--color-light-green);
   color: var(--color-dark-botanical);
 }
-

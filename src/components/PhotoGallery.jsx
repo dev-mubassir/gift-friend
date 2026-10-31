@@ -1,17 +1,16 @@
 import React, { useState } from 'react';
-import { Camera, Maximize2 } from 'lucide-react';
+import { Camera } from 'lucide-react';
 import { siteConfig } from '../config/content';
-import Lightbox from './Lightbox';
 import { BlossomIcon } from './BotanicalDecorations';
 
 /**
- * Screen 6: Photo Moments Gallery
- * Polaroid-style frames featuring Tamanna's genuine photographs,
- * subtle rotations, washi tape, handwritten captions, and full-screen swipe lightbox.
+ * Screen 6: Photo Moments Scrapbook Gallery
+ * Displays Tamanna's photographs in elegant, non-clickable Polaroid-style frames.
+ * Natural aspect ratio display, centered presentation, rounded cream frames,
+ * and zero modals/lightboxes for an authentic scrapbook feel.
  */
 export default function PhotoGallery() {
   const { photos, photoGallery } = siteConfig;
-  const [activePhotoIndex, setActivePhotoIndex] = useState(null);
   const [brokenImages, setBrokenImages] = useState({});
 
   const handleImageError = (id) => {
@@ -25,7 +24,7 @@ export default function PhotoGallery() {
       id="photo-memories"
       style={{
         padding: '60px 16px 80px 16px',
-        maxWidth: '960px',
+        maxWidth: '920px',
         margin: '0 auto',
         position: 'relative',
         zIndex: 10,
@@ -61,18 +60,19 @@ export default function PhotoGallery() {
             margin: '0 auto',
           }}
         >
-          tap any photograph to enlarge ♡
+          A few little moments to smile about ♡
         </p>
       </div>
 
-      {/* Polaroid Gallery Grid */}
+      {/* Polaroid Scrapbook Grid */}
       <div
         style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
-          gap: '36px 28px',
+          gap: '36px 24px',
           justifyContent: 'center',
-          padding: '10px 8px',
+          alignItems: 'start',
+          padding: '10px 4px',
         }}
       >
         {photos.map((photo, index) => {
@@ -85,36 +85,28 @@ export default function PhotoGallery() {
               className="polaroid-frame"
               style={{
                 transform: `rotate(${photo.rotation || 0}deg)`,
-                maxWidth: '320px',
-                margin: '0 auto',
+                maxWidth: '330px',
                 width: '100%',
-              }}
-              onClick={() => setActivePhotoIndex(index)}
-              role="button"
-              tabIndex={0}
-              aria-label={`Open photo: ${photo.caption}`}
-              onKeyDown={(e) => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                  setActivePhotoIndex(index);
-                }
+                margin: '0 auto',
+                pointerEvents: 'none', // Purely visual scrapbook card, no clicks
               }}
             >
-              {/* Cute Washi Tape at Top */}
+              {/* Washi Tape at Top */}
               <div className={`washi-tape ${washiClass}`} />
 
-              {/* Photo Area with face-friendly framing */}
+              {/* Photo Area: Natural Display with object-fit: contain to preserve full picture */}
               <div
                 style={{
                   width: '100%',
-                  aspectRatio: '4 / 4.6',
-                  borderRadius: '2px',
+                  height: 'clamp(270px, 68vw, 330px)',
+                  borderRadius: '10px',
                   overflow: 'hidden',
-                  backgroundColor: '#F7F3E8',
+                  backgroundColor: '#F5EFE6',
                   position: 'relative',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  border: '1px solid rgba(168, 185, 154, 0.2)',
+                  border: '1px solid rgba(168, 185, 154, 0.25)',
                 }}
               >
                 {!isBroken ? (
@@ -126,10 +118,10 @@ export default function PhotoGallery() {
                     style={{
                       width: '100%',
                       height: '100%',
-                      objectFit: 'cover',
-                      objectPosition: 'center 20%', // Keeps faces perfectly centered and uncropped
+                      objectFit: 'contain',
+                      objectPosition: 'center',
                       display: 'block',
-                      transition: 'transform 0.4s ease',
+                      pointerEvents: 'none',
                     }}
                   />
                 ) : (
@@ -173,27 +165,6 @@ export default function PhotoGallery() {
                     </p>
                   </div>
                 )}
-
-                {/* Hover / Tap Zoom Icon Indicator */}
-                <div
-                  style={{
-                    position: 'absolute',
-                    bottom: '10px',
-                    right: '10px',
-                    width: '32px',
-                    height: '32px',
-                    borderRadius: '50%',
-                    background: 'rgba(255, 253, 245, 0.88)',
-                    backdropFilter: 'blur(4px)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    color: '#526B53',
-                    boxShadow: '0 2px 6px rgba(0,0,0,0.1)',
-                  }}
-                >
-                  <Maximize2 size={15} />
-                </div>
               </div>
 
               {/* Handwritten Caption Chin */}
@@ -215,7 +186,7 @@ export default function PhotoGallery() {
                 {photo.date && (
                   <p
                     style={{
-                      fontSize: '0.72rem',
+                      fontSize: '0.74rem',
                       color: '#637567',
                       letterSpacing: '0.06em',
                       textTransform: 'uppercase',
@@ -230,21 +201,6 @@ export default function PhotoGallery() {
           );
         })}
       </div>
-
-      {/* Fullscreen Lightbox Modal */}
-      {activePhotoIndex !== null && (
-        <Lightbox
-          photos={photos}
-          activeIndex={activePhotoIndex}
-          onClose={() => setActivePhotoIndex(null)}
-          onPrev={() =>
-            setActivePhotoIndex((prev) => (prev === 0 ? photos.length - 1 : prev - 1))
-          }
-          onNext={() =>
-            setActivePhotoIndex((prev) => (prev === photos.length - 1 ? 0 : prev + 1))
-          }
-        />
-      )}
     </section>
   );
 }

@@ -76,7 +76,7 @@ export default function App() {
         overflowX: 'hidden',
       }}
     >
-      {/* Background Flower Rain / Floating Petals */}
+      {/* Background Flower Rain / Floating Petals (z-index: 0, behind content) */}
       <FlowerRain
         active={true}
         burst={flowerBurst}
@@ -106,7 +106,7 @@ export default function App() {
           {/* Screen 5: Sports Motivation Section ("To the Strong Girl, Tamanna 💪") */}
           <SportsMotivation />
 
-          {/* Screen 6: Photo Moments Gallery & Lightbox ("A Few Little Moments 📸") */}
+          {/* Screen 6: Photo Moments Scrapbook Gallery ("A Few Little Moments 📸") */}
           <PhotoGallery />
 
           {/* Screen 7: Personal Friendship Letter ("A Little Note for You, Tamanna") */}

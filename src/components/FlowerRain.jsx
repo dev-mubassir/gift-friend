@@ -5,6 +5,7 @@ import React, { useEffect, useRef } from 'react';
  * Renders multiple pastel flower types: sakura petals, 5-petal daisies,
  * peach blossoms, leaves, and tiny sparkles.
  * Automatically throttles on mobile and pauses when tab is hidden.
+ * Set with zIndex: 0 so flowers remain gracefully in the background behind content.
  */
 export default function FlowerRain({ active = true, burst = false, density = 'normal' }) {
   const canvasRef = useRef(null);
@@ -200,10 +201,9 @@ export default function FlowerRain({ active = true, burst = false, density = 'no
         width: '100%',
         height: '100%',
         pointerEvents: 'none',
-        zIndex: 40,
+        zIndex: 0,
       }}
       aria-hidden="true"
     />
   );
 }
-
