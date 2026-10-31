@@ -1,0 +1,23 @@
+name: Keep Alive Instance
+
+on:
+  schedule:
+    # Runs every 14 minutes (Render/free tiers sleep after 15 mins)
+    - cron: '*/14 * * * *'
+  workflow_dispatch: # Allows manual trigger from GitHub Actions tab
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Instance
+        run: |
+          URL="${{ secrets.SITE_URL || 'https://gift-friend.vercel.app' }}"
+          echo "Pinging $URL to keep instance warm..."
+          STATUS=$(curl -s -o /dev/null -w "%{http_code}" -L "$URL")
+          echo "HTTP Response Status: $STATUS"
+          if [ "$STATUS" -ge 200 ] && [ "$STATUS" -lt 400 ]; then
+            echo "Instance is active and warm! ✅"
+          else
+            echo "Notice: Non-200/300 status code returned: $STATUS"
+          fi
