@@ -5,9 +5,9 @@ import { BlossomIcon } from './BotanicalDecorations';
 
 /**
  * Screen 6: Photo Moments Scrapbook Gallery
- * Displays Tamanna's photographs in elegant, non-clickable Polaroid-style frames.
- * Natural aspect ratio display, centered presentation, rounded cream frames,
- * and zero modals/lightboxes for an authentic scrapbook feel.
+ * Displays Tamanna's photographs in classic Polaroid-style frames.
+ * Every photo fills its frame cleanly edge-to-edge (aspect-ratio: 1/1 with object-fit: cover),
+ * completely eliminating letterbox gaps, empty bars, or distortion.
  */
 export default function PhotoGallery() {
   const { photos, photoGallery } = siteConfig;
@@ -85,7 +85,7 @@ export default function PhotoGallery() {
               className="polaroid-frame"
               style={{
                 transform: `rotate(${photo.rotation || 0}deg)`,
-                maxWidth: '330px',
+                maxWidth: '320px',
                 width: '100%',
                 margin: '0 auto',
                 pointerEvents: 'none', // Purely visual scrapbook card, no clicks
@@ -94,14 +94,14 @@ export default function PhotoGallery() {
               {/* Washi Tape at Top */}
               <div className={`washi-tape ${washiClass}`} />
 
-              {/* Photo Area: Natural Display with object-fit: contain to preserve full picture */}
+              {/* Photo Area: Perfect 1:1 square window so photo fills frame edge-to-edge */}
               <div
                 style={{
                   width: '100%',
-                  height: 'clamp(270px, 68vw, 330px)',
-                  borderRadius: '10px',
+                  aspectRatio: '1 / 1',
+                  borderRadius: '4px',
                   overflow: 'hidden',
-                  backgroundColor: '#F5EFE6',
+                  backgroundColor: '#FAF7EE',
                   position: 'relative',
                   display: 'flex',
                   alignItems: 'center',
@@ -118,8 +118,8 @@ export default function PhotoGallery() {
                     style={{
                       width: '100%',
                       height: '100%',
-                      objectFit: 'contain',
-                      objectPosition: 'center',
+                      objectFit: 'cover',
+                      objectPosition: photo.id === 2 ? 'center 20%' : 'center center',
                       display: 'block',
                       pointerEvents: 'none',
                     }}
