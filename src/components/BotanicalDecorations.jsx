@@ -87,3 +87,28 @@ export const BotanicalDivider = () => (
     <span style={{ width: '45px', height: '1px', background: 'linear-gradient(to left, transparent, #A8B99A)' }} />
   </div>
 );
+
+/**
+ * Botanical Dumbbell Illustration
+ * Elegant sports motif wrapped with delicate botanical vines and tiny blossoms
+ */
+export const BotanicalDumbbell = ({ size = 48, className = "" }) => (
+  <svg width={size} height={size * 0.55} viewBox="0 0 100 55" fill="none" xmlns="http://www.w3.org/2000/svg" className={className} style={{ display: 'inline-block' }}>
+    {/* Left Weight Plates */}
+    <rect x="6" y="8" width="8" height="38" rx="3" fill="#A8B99A" stroke="#526B53" strokeWidth="1.5"/>
+    <rect x="16" y="13" width="7" height="28" rx="2.5" fill="#DCE8D5" stroke="#526B53" strokeWidth="1.5"/>
+    {/* Central Bar */}
+    <rect x="23" y="24" width="54" height="6" rx="2" fill="#526B53"/>
+    {/* Right Weight Plates */}
+    <rect x="77" y="13" width="7" height="28" rx="2.5" fill="#DCE8D5" stroke="#526B53" strokeWidth="1.5"/>
+    <rect x="86" y="8" width="8" height="38" rx="3" fill="#A8B99A" stroke="#526B53" strokeWidth="1.5"/>
+    {/* Botanical Vine Wrapped around Bar */}
+    <path d="M26 27 Q40 18 50 27 Q60 36 74 27" stroke="#526B53" strokeWidth="1.5" strokeLinecap="round" fill="none"/>
+    {/* Little Vine Leaves */}
+    <path d="M36 21 Q40 16 43 22 Z" fill="#A8B99A"/>
+    <path d="M62 33 Q66 38 69 32 Z" fill="#DCE8D5"/>
+    {/* Miniature Center Blossom */}
+    <circle cx="50" cy="27" r="4.5" fill="#E8C7CC"/>
+    <circle cx="50" cy="27" r="2" fill="#D4A373"/>
+  </svg>
+);

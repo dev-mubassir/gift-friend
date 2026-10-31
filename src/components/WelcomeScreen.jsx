@@ -1,15 +1,15 @@
 import React from 'react';
-import { Volume2, Sparkles, Heart, ArrowRight } from 'lucide-react';
+import { Volume2, ArrowRight } from 'lucide-react';
 import { siteConfig } from '../config/content';
 import { BotanicalWreath, BlossomIcon, BotanicalSprig } from './BotanicalDecorations';
 
 /**
  * Screen 1: Welcome Screen
- * Full-screen welcoming scene with delicate botanical accents,
- * handwritten title, volume hint, and an interactive "I'm ready" button.
+ * Opening scene with botanical wreath, volume notice,
+ * and supportive friendship introduction for Tamanna.
  */
 export default function WelcomeScreen({ onStart }) {
-  const { welcome, recipient } = siteConfig;
+  const { welcome } = siteConfig;
 
   return (
     <div
@@ -54,13 +54,13 @@ export default function WelcomeScreen({ onStart }) {
         <BotanicalSprig className="w-12 h-12" color="#E8C7CC" />
       </div>
 
-      {/* Main Content Container with Soft Ivory Card */}
+      {/* Main Content Container */}
       <div
         className="animate-fade-in-up"
         style={{
-          maxWidth: '460px',
+          maxWidth: '480px',
           width: '100%',
-          background: 'rgba(255, 253, 245, 0.88)',
+          background: 'rgba(255, 253, 245, 0.90)',
           backdropFilter: 'blur(12px)',
           borderRadius: '28px',
           padding: '42px 28px',
@@ -84,45 +84,33 @@ export default function WelcomeScreen({ onStart }) {
           </div>
         </div>
 
-        {/* Handwritten Tagline */}
-        <p
-          className="font-script"
-          style={{
-            fontSize: '2rem',
-            color: '#526B53',
-            marginBottom: '8px',
-            lineHeight: 1.2,
-          }}
-        >
-          {welcome.tagline}
-        </p>
-
-        {/* Recipient's Greeting Title */}
+        {/* Opening Heading */}
         <h1
           className="font-serif"
           style={{
-            fontSize: '1.9rem',
+            fontSize: 'clamp(1.75rem, 4.8vw, 2.2rem)',
             fontWeight: 600,
             color: '#2F3E33',
             letterSpacing: '-0.01em',
-            marginBottom: '14px',
-            lineHeight: 1.25,
+            marginBottom: '12px',
+            lineHeight: 1.3,
           }}
         >
-          For {recipient.name}
+          {welcome.heading}
         </h1>
 
-        {/* Warm Welcome Description */}
+        {/* Subtitle */}
         <p
           style={{
-            fontSize: '0.98rem',
-            color: '#637567',
-            lineHeight: 1.65,
+            fontSize: '1rem',
+            color: '#526B53',
+            lineHeight: 1.6,
             marginBottom: '26px',
             padding: '0 8px',
+            fontWeight: 450,
           }}
         >
-          {welcome.message}
+          {welcome.subtitle}
         </p>
 
         {/* Audio Volume Notice */}
@@ -130,21 +118,23 @@ export default function WelcomeScreen({ onStart }) {
           style={{
             display: 'inline-flex',
             alignItems: 'center',
-            gap: '8px',
+            gap: '10px',
             background: 'rgba(220, 232, 213, 0.45)',
             border: '1px solid rgba(168, 185, 154, 0.4)',
-            borderRadius: '9999px',
-            padding: '8px 18px',
+            borderRadius: '16px',
+            padding: '10px 18px',
             marginBottom: '32px',
-            fontSize: '0.82rem',
-            color: '#526B53',
+            fontSize: '0.86rem',
+            color: '#2F3E33',
+            lineHeight: 1.45,
+            textAlign: 'left',
           }}
         >
-          <Volume2 size={16} />
+          <Volume2 size={20} color="#526B53" style={{ flexShrink: 0 }} />
           <span>{welcome.audioHint}</span>
         </div>
 
-        {/* Ready Action Button */}
+        {/* Continue Action Button */}
         <div>
           <button
             onClick={onStart}
@@ -163,10 +153,10 @@ export default function WelcomeScreen({ onStart }) {
         </div>
       </div>
 
-      {/* Footer subtle floral accent */}
-      <div style={{ marginTop: '24px', opacity: 0.65 }}>
+      {/* Footer subtle note */}
+      <div style={{ marginTop: '24px', opacity: 0.75 }}>
         <p className="font-script" style={{ fontSize: '1.25rem', color: '#526B53' }}>
-          crafted with love & flowers ♡
+          a little corner of encouragement from your friend 🌿
         </p>
       </div>
     </div>

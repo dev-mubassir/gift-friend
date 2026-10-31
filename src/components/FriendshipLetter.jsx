@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Mail, Play, RotateCcw, Check, Sparkles } from 'lucide-react';
+import { Mail, RotateCcw } from 'lucide-react';
 import { siteConfig } from '../config/content';
-import { BotanicalSprig, FloralCorner, BlossomIcon } from './BotanicalDecorations';
+import { FloralCorner, BlossomIcon } from './BotanicalDecorations';
 
 /**
  * Screen 7: Personal Friendship Letter
@@ -26,7 +26,7 @@ export default function FriendshipLetter() {
           setHasStarted(true);
         }
       },
-      { threshold: 0.25 }
+      { threshold: 0.2 }
     );
 
     if (letterRef.current) {
@@ -49,7 +49,7 @@ export default function FriendshipLetter() {
         clearInterval(interval);
         setIsTyping(false);
       }
-    }, 22); // ~22ms per character creates a rhythmic, realistic typing feel
+    }, 20); // ~20ms per character
 
     return () => clearInterval(interval);
   };
@@ -83,16 +83,16 @@ export default function FriendshipLetter() {
         <h2
           className="font-serif"
           style={{
-            fontSize: 'clamp(1.9rem, 4vw, 2.6rem)',
-            fontWeight: 500,
+            fontSize: 'clamp(2rem, 4.5vw, 2.7rem)',
+            fontWeight: 600,
             color: '#2F3E33',
             marginBottom: '8px',
           }}
         >
-          A Letter For You
+          {letter.heading}
         </h2>
-        <p className="font-script" style={{ fontSize: '1.4rem', color: '#526B53' }}>
-          written from the heart ♡
+        <p className="font-script" style={{ fontSize: '1.45rem', color: '#526B53' }}>
+          a note of encouragement before the big day 🌿
         </p>
       </div>
 
@@ -100,14 +100,15 @@ export default function FriendshipLetter() {
       <div
         className="letter-paper"
         style={{
-          borderRadius: '18px',
+          borderRadius: '20px',
           padding: 'clamp(28px, 6vw, 48px)',
           position: 'relative',
           overflow: 'hidden',
+          boxShadow: 'var(--shadow-medium)',
         }}
       >
         {/* Washi tape at top center */}
-        <div className="washi-tape pink" style={{ top: '-10px' }} />
+        <div className="washi-tape sage" style={{ top: '-10px' }} />
 
         {/* Delicate Pressed Floral Corner Decorations */}
         <FloralCorner
@@ -137,7 +138,7 @@ export default function FriendshipLetter() {
         >
           <span
             style={{
-              fontSize: '0.82rem',
+              fontSize: '0.85rem',
               color: '#637567',
               letterSpacing: '0.04em',
               fontStyle: 'italic',
@@ -150,25 +151,25 @@ export default function FriendshipLetter() {
           <div
             style={{
               border: '1.5px dashed #A8B99A',
-              padding: '6px 10px',
-              borderRadius: '4px',
+              padding: '6px 12px',
+              borderRadius: '6px',
               background: '#FFFDF5',
               display: 'flex',
               alignItems: 'center',
               gap: '6px',
             }}
           >
-            <BlossomIcon size={16} color="#E8C7CC" />
+            <BlossomIcon size={16} color="#A8B99A" />
             <span
               style={{
-                fontSize: '0.7rem',
+                fontSize: '0.72rem',
                 textTransform: 'uppercase',
                 letterSpacing: '0.08em',
                 color: '#526B53',
                 fontWeight: 600,
               }}
             >
-              Postage • Pure Care
+              Strength & Friendship
             </span>
           </div>
         </div>
@@ -177,7 +178,7 @@ export default function FriendshipLetter() {
         <p
           className="font-script"
           style={{
-            fontSize: 'clamp(1.8rem, 4vw, 2.2rem)',
+            fontSize: 'clamp(1.85rem, 4.5vw, 2.3rem)',
             color: '#2F3E33',
             marginBottom: '20px',
             lineHeight: 1.2,
@@ -189,10 +190,10 @@ export default function FriendshipLetter() {
         {/* Typewriter Body Content */}
         <div
           style={{
-            minHeight: '180px',
-            fontSize: 'clamp(1rem, 2.5vw, 1.12rem)',
-            lineHeight: 1.85,
-            color: '#38483B',
+            minHeight: '200px',
+            fontSize: 'clamp(1.02rem, 2.5vw, 1.15rem)',
+            lineHeight: 1.9,
+            color: '#344538',
             whiteSpace: 'pre-line',
             fontFamily: 'var(--font-serif)',
           }}
@@ -222,13 +223,13 @@ export default function FriendshipLetter() {
             transition: 'opacity 0.6s ease',
           }}
         >
-          <p style={{ fontSize: '0.95rem', color: '#637567', fontStyle: 'italic' }}>
+          <p style={{ fontSize: '1rem', color: '#637567', fontStyle: 'italic' }}>
             {letter.closing}
           </p>
           <p
             className="font-script"
             style={{
-              fontSize: 'clamp(2rem, 5vw, 2.5rem)',
+              fontSize: 'clamp(1.8rem, 4.5vw, 2.3rem)',
               color: '#526B53',
               marginTop: '4px',
               lineHeight: 1.1,
@@ -238,7 +239,7 @@ export default function FriendshipLetter() {
           </p>
         </div>
 
-        {/* Interactive Typewriter Controls */}
+        {/* Interactive Controls */}
         <div
           style={{
             marginTop: '28px',

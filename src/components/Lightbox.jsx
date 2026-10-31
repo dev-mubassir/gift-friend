@@ -278,3 +278,4 @@ export default function Lightbox({ photos, activeIndex, onClose, onPrev, onNext 
     </div>
   );
 }
+

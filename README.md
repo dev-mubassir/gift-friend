@@ -1,165 +1,73 @@
-# 🌸 A Little Secret Garden — Friendship Gift Website
+# 🌸 Tamanna's Friendship & Sports Encouragement Gift Website
 
-An elegant, mobile-first interactive digital greeting website created as a personal gift for a cherished female friend. Designed with a dreamy botanical aesthetic featuring warm cream, soft ivory, sage green, and pastel floral tones.
+An elegant, mobile-first interactive digital keepsake created as a personal friendship appreciation and sports encouragement gift for **Tamanna**. Designed with a dreamy botanical aesthetic featuring warm cream, soft ivory, sage green, and pastel floral tones.
 
 ---
 
 ## ✨ Features & Experience Flow
 
 1. **Screen 1: Welcoming Scene**
-   - Delicate animated botanical wreath and drifting pastel petals.
-   - Handwritten heading: *"A little something for you ♡"*.
-   - Gentle reminder to turn up audio or put on earphones.
-   - Beautiful *"I'm ready ✨"* entrance button (audio does not autoplay until user interaction).
+   - Opening heading: *"A little surprise for you, Tamanna! 🌷"*
+   - Subtitle: *"Because even the strongest people deserve a little encouragement sometimes."*
+   - Volume notice: *"Before we begin, turn your volume up and get comfortable. A little surprise is waiting for you!"*
+   - Button: *"Let's begin! ♡"*
 
-2. **Screen 2: Playful Secret Keypad**
-   - 4-digit code entry with blooming flower bud indicators.
-   - Default passcode: **`5656`** (easily customizable in `content.js`).
-   - Custom touch-friendly numeric keypad with Backspace and Clear controls.
-   - Gentle error shake with friendly hint on incorrect entry.
-   - Blossoming flower celebration animation on success.
+2. **Screen 2: Secret Keypad**
+   - Passcode: **`5656`** with blooming flower bud indicators.
+   - Message: *"One little secret stands between you and your surprise."*
+   - Custom keypad with vibration feedback on mobile, reset, and backspace.
 
-3. **Screen 3: Magical Entrance & Celebration**
-   - Starts persistent background audio of the selected Alfaz song upon unlock.
-   - High-performance Canvas particle flower rain with cherry blossoms, daisies, peach petals, leaves, and golden sparkles.
-   - Organic, battery-conscious animation that pauses automatically when the tab is backgrounded.
+3. **Screen 3: Magical Entrance & Music Seeking (1:20 / 80s)**
+   - Persistent background playback of Alfaz's track starts precisely at **1 minute 20 seconds (80 seconds)**.
+   - Colorful falling flower rain flurry with sakura petals, daisies, peach petals, leaves, and sparkles.
 
 4. **Screen 4: Main Greeting Hero**
-   - Thoughtful headline: *"Some people make ordinary days a little more beautiful ♡"*.
-   - Original friendship appreciation notes and delicate botanical divider.
-   - Smooth navigation cue to explore further.
+   - Heading: *"Hey Tamanna, keep blooming! 🌼"*
+   - Paragraph: *"Here's a tiny reminder from your friend: you're stronger than you sometimes realise. Every little effort, every tough training session and every challenge you face is helping you become a better version of yourself. Keep believing in yourself!"*
 
-5. **Screen 5: Polaroid Photo Memories**
-   - 4 polaroid-style photos with realistic paper drop shadows, washi tape corners, and slight organic tilts.
-   - Cute handwritten captions.
-   - Fullscreen Lightbox with swipe gesture navigation on mobile, keyboard arrow support, and close button.
-   - Graceful fallback: If custom photos are not yet uploaded, artistic botanical cards explain where to place them without breaking the layout.
+5. **Screen 5: Sports Motivation Section**
+   - Heading: *"To the Strong Girl, Tamanna 💪"*
+   - Dedicated encouragement for her weightlifting, training, and upcoming tournament.
+   - Highlights: *"Lift strong. Play strong. Stay confident. You've got this, Tamanna!"*
+   - Delicate sports & strength botanical motifs.
 
-6. **Screen 6: Words of Appreciation**
-   - Dedicated section celebrating her best qualities: Radiance, Uniqueness, Grace, and Kindness.
-   - Sweet, respectful, uplifting friendship messages (not romantic or possessive).
+6. **Screen 6: Polaroid Photo Moments**
+   - Heading: *"A Few Little Moments 📸"*
+   - 4 real photographs of Tamanna with natural tilts, washi tape, and handwritten captions:
+     - *"Keep being you!"*
+     - *"A little collection of smiles."*
+     - *"Strong, cheerful and unstoppable."*
+     - *"Another reason to keep smiling."*
+   - Fullscreen Lightbox with touch swipe gestures on mobile and keyboard navigation.
 
 7. **Screen 7: Vintage Friendship Letter**
-   - Digital letter set on cream paper with deckled texture and pressed floral corner accents.
-   - Interactive typewriter-style text reveal with *"Read Instantly"* and *"Replay Reveal"* controls.
-   - Handwritten closing signature.
+   - Heading: *"A Little Note for You, Tamanna"*
+   - Displayed on cream ruled paper with vintage postal stamp and pressed floral corners.
+   - Heartfelt, respectful encouragement letter with interactive typewriter reveal.
+   - Signature: *"Your friend, Someone cheering for you! 💚"*
 
 8. **Screen 8: Final Surprise & Interactive Garden**
-   - *"Keep smiling, keep blooming 🌷"*.
-   - Interactive touch feature: **Tap or click anywhere on screen to plant blooming flowers!**
-   - Replay button to experience the whole journey again.
+   - Heading: *"Go Shine, Tamanna! 🌸"*
+   - Message: *"Your next chapter is waiting. Walk into it with confidence, give your best and make yourself proud. Sending you lots of positive energy for your upcoming tournament!"*
+   - Final line: *"Keep growing. Keep getting stronger. Keep blooming."*
+   - Interactive touch: Tap anywhere to plant blooming flowers!
+   - Replay button.
 
 9. **Persistent Music Player**
-   - Floating frosted-glass capsule with Alfaz's track.
-   - Play / Pause / Mute toggles.
-   - Subtle animated equalizer bars and track info tooltip.
-   - Gracefully handles browser autoplay restrictions and errors.
+   - Floating frosted capsule with Play/Pause, Mute, animated equalizer bars, and song title.
+   - Gracefully handles browser restrictions and seeks to 80s seamlessly.
 
 ---
 
-## 🛠️ Tech Stack
+## 🚀 Running the Project
 
-- **Framework**: React 19 + Vite
-- **Icons**: Lucide React
-- **Animations**: Custom hardware-accelerated CSS + Canvas Particle System
-- **Fonts**: Google Fonts (*Cormorant Garamond*, *Caveat*, *Plus Jakarta Sans*)
-- **Styling**: Modern vanilla CSS with CSS variables, safe-area insets, and zero heavy UI libraries
-
----
-
-## 🚀 Quick Start
-
-### 1. Install dependencies
 ```bash
+# 1. Install dependencies
 npm install
-```
 
-### 2. Start the development server
-```bash
+# 2. Start dev server
 npm run dev
-```
 
-Open your browser at `http://localhost:5173`.
-
-### 3. Build for production
-```bash
+# 3. Build for production
 npm run build
 ```
-
-The compiled output will be generated inside the `dist/` directory, ready to deploy to Netlify, Vercel, Cloudflare Pages, or GitHub Pages.
-
----
-
-## 🎨 Customizing Content in 5 Minutes
-
-All personal text, names, password, photos, letter, and audio settings are centralized in **one single file**:
-
-📁 **`src/config/content.js`**
-
-### Change Friend's Name:
-```javascript
-recipient: {
-  name: "HerName",
-  nickname: "Flower",
-}
-```
-
-### Change the Passcode:
-```javascript
-secretPassword: "5656", // Any 4-digit code
-```
-
-### Add Her Photographs:
-Place your images inside `public/images/`:
-- `public/images/photo-1.jpg`
-- `public/images/photo-2.jpg`
-- `public/images/photo-3.jpg`
-- `public/images/photo-4.jpg`
-
-Update the captions in `src/config/content.js`:
-```javascript
-photos: [
-  {
-    id: 1,
-    src: "/images/photo-1.jpg",
-    caption: "That day we laughed until our stomachs hurt ✨",
-    date: "Cherished Moments",
-  },
-  // ...
-]
-```
-
-### Change the Song:
-Place any MP3 audio inside `public/audio/song.mp3` or set a remote URL:
-```javascript
-music: {
-  title: "Song Title",
-  artist: "Artist Name",
-  src: "/audio/song.mp3",
-}
-```
-
-### Edit the Friendship Letter:
-Edit the `paragraphs` array in `src/config/content.js`:
-```javascript
-letter: {
-  salutation: "Dear [Name],",
-  paragraphs: [
-    "Your custom note here...",
-  ],
-  signature: "Your Friend ♡",
-}
-```
-
----
-
-## 📱 Mobile & Accessibility Optimizations
-
-- **Safe Areas**: Built-in support for notched phones and Android home indicators via `env(safe-area-inset-bottom)`.
-- **Touch Targets**: Minimum 44px–48px buttons with zero 300ms tap delay.
-- **Battery & Performance**: Canvas particle engine pauses immediately when the browser tab is hidden or minimized (`visibilitychange`).
-- **Reduced Motion**: Fully respects system-level `prefers-reduced-motion` settings.
-
----
-
-Made with pure warmth and care 🌸

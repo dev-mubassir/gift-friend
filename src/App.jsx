@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import WelcomeScreen from './components/WelcomeScreen';
 import PasswordScreen from './components/PasswordScreen';
 import MainGreeting from './components/MainGreeting';
+import SportsMotivation from './components/SportsMotivation';
 import PhotoGallery from './components/PhotoGallery';
-import Appreciation from './components/Appreciation';
 import FriendshipLetter from './components/FriendshipLetter';
 import FinalSurprise from './components/FinalSurprise';
 import MusicPlayer from './components/MusicPlayer';
@@ -16,27 +16,28 @@ export default function App() {
   const [currentScreen, setCurrentScreen] = useState('welcome');
   const [flowerBurst, setFlowerBurst] = useState(false);
 
-  // Background Audio Controller
+  // Background Audio Controller - starts at 80s (1:20)
   const audio = useAudio(siteConfig.music.src, {
     autoPlay: false,
     loop: siteConfig.music.loop,
+    startTime: siteConfig.music.startTime || 80,
   });
 
-  // Step 1: User clicks "I'm ready" on Welcome Screen
+  // Step 1: User clicks "Let's begin! ♡" on Welcome Screen
   const handleStart = () => {
     setCurrentScreen('password');
   };
 
   // Step 2: User successfully enters correct password (5656)
   const handleUnlock = () => {
-    // Start music on this confirmed user gesture
+    // Start music at 80 seconds on this confirmed user gesture
     audio.play();
 
     // Trigger celebratory flower rain burst
     setFlowerBurst(true);
     setCurrentScreen('garden');
 
-    // Scroll to top of the garden
+    // Scroll to top of the garden smoothly
     window.scrollTo({ top: 0, behavior: 'smooth' });
 
     // Reset burst mode back to normal gentle floating after 5 seconds
@@ -59,8 +60,8 @@ export default function App() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const scrollToMemories = () => {
-    const el = document.getElementById('photo-memories');
+  const scrollToMotivation = () => {
+    const el = document.getElementById('sports-motivation');
     if (el) {
       el.scrollIntoView({ behavior: 'smooth' });
     }
@@ -96,22 +97,22 @@ export default function App() {
         </div>
       )}
 
-      {/* Screen 3 to 8: Main Botanical Garden Experience */}
+      {/* Screen 3 to 8: Main Botanical Garden & Sports Encouragement Experience */}
       {currentScreen === 'garden' && (
         <main className="animate-fade-in-up safe-area-bottom">
           {/* Screen 4: Main Greeting Hero */}
-          <MainGreeting onScrollNext={scrollToMemories} />
+          <MainGreeting onScrollNext={scrollToMotivation} />
 
-          {/* Screen 5: Photo Memories Gallery & Lightbox */}
+          {/* Screen 5: Sports Motivation Section ("To the Strong Girl, Tamanna 💪") */}
+          <SportsMotivation />
+
+          {/* Screen 6: Photo Moments Gallery & Lightbox ("A Few Little Moments 📸") */}
           <PhotoGallery />
 
-          {/* Screen 6: A Little Appreciation */}
-          <Appreciation />
-
-          {/* Screen 7: Personal Friendship Letter */}
+          {/* Screen 7: Personal Friendship Letter ("A Little Note for You, Tamanna") */}
           <FriendshipLetter />
 
-          {/* Screen 8: Final Surprise & Replay */}
+          {/* Screen 8: Final Surprise & Replay ("Go Shine, Tamanna! 🌸") */}
           <FinalSurprise
             onReplay={handleReplay}
             onTriggerBurst={handleTriggerBurst}

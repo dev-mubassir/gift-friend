@@ -1,15 +1,16 @@
 /**
- * Content Configuration for Friendship Greeting Website
+ * Content Configuration for Tamanna's Friendship & Sports Encouragement Website
  * 
- * All personal content, messages, images, music, and theme settings
- * can be edited here without modifying any component code.
+ * Clean, respectful, supportive friendship tone.
+ * Celebrates Tamanna's strength, dedication in weightlifting/sports,
+ * and upcoming tournament encouragement.
  */
 
 export const siteConfig = {
   // Friend's information
   recipient: {
-    name: "Ayesha", // Change to your friend's name
-    nickname: "Flower", // Optional cute nickname
+    name: "Tamanna",
+    nickname: "Champ",
   },
 
   // Playful 4-digit password to unlock the garden
@@ -25,144 +26,151 @@ export const siteConfig = {
     softPeach: "#EBC9B5",
     mutedPink: "#E8C7CC",
     warmGold: "#D4A373",
-    textDark: "#334139",
-    textMuted: "#6B7C70",
+    textDark: "#2F3E33",
+    textMuted: "#637567",
   },
 
   // Screen 1: Welcome Screen
   welcome: {
-    tagline: "A little something for you ♡",
-    title: "A Secret Garden of Appreciation",
-    message: "A tiny corner of the internet created with care, just for someone truly special.",
-    audioHint: "Put on your earphones or turn up your volume for the best experience 🎧✨",
-    buttonText: "I'm ready ✨",
+    heading: "A little surprise for you, Tamanna! 🌷",
+    subtitle: "Because even the strongest people deserve a little encouragement sometimes.",
+    audioHint: "Before we begin, turn your volume up and get comfortable. A little surprise is waiting for you!",
+    buttonText: "Let's begin! ♡",
   },
 
   // Screen 2: Password Screen
   passwordScreen: {
     title: "Secret Key",
-    subtitle: "Enter the 4-digit code to bloom the garden",
+    subtitle: "One little secret stands between you and your surprise.",
     hint: "Hint: Try 5656 ♡",
-    successMessage: "Welcome in! Blooming your garden... 🌸",
+    successMessage: "Welcome in! Let's get you inspired... 🌸",
     errorMessage: "Oops, that didn't match. Try again!",
     resetText: "Clear",
   },
 
   // Screen 3 & 4: Entrance & Main Greeting Hero
   greeting: {
-    badge: "For a Wonderful Friend",
-    heading: "Some people make ordinary days a little more beautiful ♡",
-    subtitle: "You bring warmth, laughter, and calm wherever you go. Having you as a friend is a gift that makes life so much sweeter.",
-    scrollPrompt: "Explore your memories & notes below",
+    badge: "A Note From Your Friend",
+    heading: "Hey Tamanna, keep blooming! 🌼",
+    message: "Here's a tiny reminder from your friend: you're stronger than you sometimes realise. Every little effort, every tough training session and every challenge you face is helping you become a better version of yourself. Keep believing in yourself!",
+    scrollPrompt: "Explore your motivation & memories below",
   },
 
-  // Screen 5: Photo Memories (Polaroid Gallery)
-  // Replace these with actual pictures in public/images/ (e.g. photo-1.jpg)
-  // If an image is not found, an elegant botanical art placeholder is displayed automatically.
+  // Screen 5: Sports Motivation Section (Section 7)
+  sportsMotivation: {
+    badge: "Tournament Motivation",
+    heading: "To the Strong Girl, Tamanna 💪",
+    subtitle: "A reminder of your dedication, grit, and power before the big day.",
+    cards: [
+      {
+        id: 1,
+        icon: "Dumbbell",
+        tag: "True Strength",
+        text: "Strong isn't just about how much weight you can lift. It's also about showing up when you're tired, trying again after a difficult day and having the courage to keep going.",
+      },
+      {
+        id: 2,
+        icon: "Flame",
+        tag: "Dedication",
+        text: "Your training, dedication and hard work matter. Every repetition, every practice session and every small improvement is a step forward.",
+      },
+      {
+        id: 3,
+        icon: "Target",
+        tag: "Preparation",
+        text: "Your tournament is coming soon. Trust your preparation, stay focused and give yourself the chance to shine. Don't let nervousness make you forget how much work you've already put in.",
+      },
+      {
+        id: 4,
+        icon: "Trophy",
+        tag: "Courage",
+        text: "Win or lose, your effort and courage are worth respecting. Go out there, enjoy your game and give it your best!",
+      },
+    ],
+    highlight: "Lift strong. Play strong. Stay confident. You've got this, Tamanna!",
+  },
+
+  // Screen 6: Photo Memories (Real Photographs of Tamanna)
+  photoGallery: {
+    badge: "Cherished Memories",
+    heading: "A Few Little Moments 📸",
+    subtitle: "A little collection celebrating your cheerfulness and strength.",
+  },
+
   photos: [
     {
       id: 1,
       src: "/images/photo-1.jpg",
-      caption: "That day we laughed until our stomachs hurt ✨",
-      date: "Cherished Moments",
-      rotation: -2.5,
-      placeholderTitle: "A Beautiful Memory ♡",
-      placeholderHint: "Replace with: public/images/photo-1.jpg",
+      caption: "Keep being you!",
+      date: "Pure Cheer",
+      rotation: -2.2,
+      placeholderTitle: "Tamanna's Smile ♡",
+      placeholderHint: "public/images/photo-1.jpg",
     },
     {
       id: 2,
       src: "/images/photo-2.jpg",
-      caption: "Your infectious smile that brightens any room 🌸",
-      date: "Sunshine & Grace",
-      rotation: 2.2,
-      placeholderTitle: "Your Brightest Smile ♡",
-      placeholderHint: "Replace with: public/images/photo-2.jpg",
+      caption: "A little collection of smiles.",
+      date: "Sunshine Spirit",
+      rotation: 2.0,
+      placeholderTitle: "Sunshine Spirit ♡",
+      placeholderHint: "public/images/photo-2.jpg",
     },
     {
       id: 3,
       src: "/images/photo-3.jpg",
-      caption: "Little coffee chats & endless conversations ☕",
-      date: "Favorite Conversations",
+      caption: "Strong, cheerful and unstoppable.",
+      date: "Unstoppable Energy",
       rotation: -1.8,
-      placeholderTitle: "Unfiltered Chats ♡",
-      placeholderHint: "Replace with: public/images/photo-3.jpg",
+      placeholderTitle: "Unstoppable Energy ♡",
+      placeholderHint: "public/images/photo-3.jpg",
     },
     {
       id: 4,
       src: "/images/photo-4.jpg",
-      caption: "Always grateful for your kindness and heart 🌿",
-      date: "Pure Heart",
-      rotation: 2.8,
-      placeholderTitle: "A Heart of Gold ♡",
-      placeholderHint: "Replace with: public/images/photo-4.jpg",
+      caption: "Another reason to keep smiling.",
+      date: "Bright Moments",
+      rotation: 2.5,
+      placeholderTitle: "Bright Moments ♡",
+      placeholderHint: "public/images/photo-4.jpg",
     },
   ],
 
-  // Screen 6: A Little Appreciation
-  appreciation: {
-    badge: "Words From The Heart",
-    title: "Things I Sincerely Appreciate About You",
-    subtitle: "Just a gentle reminder of the wonderful qualities that make you uniquely you.",
-    cards: [
-      {
-        id: 1,
-        icon: "Sun",
-        tag: "Radiance",
-        quote: "Your smile makes everything brighter.",
-        detail: "Even on chaotic or gloomy days, your energy brings an instant sense of warmth and cheer.",
-      },
-      {
-        id: 2,
-        icon: "Sparkles",
-        tag: "Uniqueness",
-        quote: "Never forget how special you are.",
-        detail: "In a world that is constantly hurrying, your genuine authenticity and sweet soul stand out effortlessly.",
-      },
-      {
-        id: 3,
-        icon: "Heart",
-        tag: "Grace",
-        quote: "Stay the beautiful person you are.",
-        detail: "The way you treat people with patience and understanding inspires everyone around you.",
-      },
-      {
-        id: 4,
-        icon: "Flower2",
-        tag: "Kindness",
-        quote: "The world needs more people with your kindness.",
-        detail: "Your gentle thoughtfulness never goes unnoticed, even when you think no one is watching.",
-      },
-    ],
-  },
-
   // Screen 7: Personal Friendship Letter
   letter: {
-    badge: "A Note For You",
-    date: "A quiet afternoon, 2026",
-    salutation: "Dear Ayesha,",
+    badge: "From Your Friend",
+    date: "Tournament Season, 2026",
+    heading: "A Little Note for You, Tamanna",
+    salutation: "Hey Tamanna! 🌷",
     paragraphs: [
-      "I wanted to take a quiet moment to create something handmade for you—a little digital sanctuary full of blossoms, gentle music, and gratitude.",
-      "True friends who listen without judgment, celebrate your little wins, and bring peace into your life are rare treasures. You have been that friend in so many ways.",
-      "Thank you for being someone I can always count on, for the shared laughs, and for simply being yourself. I hope this little gesture reminds you today of just how valued and appreciated you are.",
+      "I just wanted to make something a little different for you, especially with your tournament coming up.",
+      "First of all, never underestimate yourself. I know sports and training aren't always easy. There are tiring days, difficult sessions, moments when things don't go as planned and times when progress feels slow. But that's exactly where your strength shows.",
+      "Every bit of effort you put into your training counts. Every repetition, every practice session and every time you choose not to give up is making you stronger.",
+      "Remember, you don't have to be perfect at everything. Just stay consistent, trust your hard work and keep learning. When the tournament starts, don't let pressure take away the fun of playing. Stay calm, believe in your preparation and give it everything you've got.",
+      "And one more thing: your worth isn't decided by a medal, a score or a result. Win or lose, be proud of yourself for having the courage to compete and the determination to keep improving.",
+      "Keep lifting, keep playing and keep pushing your limits. I genuinely hope you achieve everything you're working towards.",
+      "Always stay strong, keep smiling and never stop believing in yourself.",
     ],
-    closing: "Always rooting for you,",
-    signature: "Your Friend ♡",
+    closing: "Your friend,",
+    signature: "Someone cheering for you! 💚",
   },
 
   // Screen 8: Final Surprise
   finalSurprise: {
-    heading: "Keep smiling, keep blooming 🌷",
-    subheading: "May your days ahead be filled with as much happiness as you bring to others.",
+    heading: "Go Shine, Tamanna! 🌸",
+    message: "Your next chapter is waiting. Walk into it with confidence, give your best and make yourself proud. Sending you lots of positive energy for your upcoming tournament!",
+    finalLine: "Keep growing. Keep getting stronger. Keep blooming.",
     interactiveHint: "Tap anywhere on this screen to plant a blooming flower 🌸",
     replayButtonText: "Experience from the beginning ✨",
   },
 
-  // Screen 4 Music configuration (Alfaz song)
+  // Music configuration (Alfaz song starting at 1:20 = 80s)
   music: {
     title: "Unki Tareef",
     artist: "Alfaz",
     src: "/audio/song.mp3",
-    autoPlayOnUnlock: true, // Audio starts after unlocking with password
+    startTime: 80, // Starts at exactly 1 minute 20 seconds
+    autoPlayOnUnlock: true,
     loop: true,
   },
 };

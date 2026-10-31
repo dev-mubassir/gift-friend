@@ -206,3 +206,4 @@ export default function FlowerRain({ active = true, burst = false, density = 'no
     />
   );
 }
+

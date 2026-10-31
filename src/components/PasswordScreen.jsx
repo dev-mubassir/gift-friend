@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Delete, RotateCcw, KeyRound, Sparkles, Check } from 'lucide-react';
+import { Delete, RotateCcw, KeyRound, Sparkles } from 'lucide-react';
 import { siteConfig } from '../config/content';
-import { BlossomIcon, DaisyFlower, BotanicalSprig } from './BotanicalDecorations';
+import { BlossomIcon, BotanicalSprig } from './BotanicalDecorations';
 
 /**
  * Screen 2: Secret Password Screen
@@ -56,7 +56,7 @@ export default function PasswordScreen({ onUnlock }) {
       // Give time for success animation to blossom before transitioning
       setTimeout(() => {
         onUnlock();
-      }, 900);
+      }, 850);
     } else {
       setStatus('error');
       setShowHint(true);
@@ -166,14 +166,16 @@ export default function PasswordScreen({ onUnlock }) {
             marginBottom: '6px',
           }}
         >
-          {status === 'success' ? 'Garden Unlocked! 🌸' : passwordScreen.title}
+          {status === 'success' ? 'Welcome, Tamanna! 🌸' : passwordScreen.title}
         </h2>
 
+        {/* Subtitle / Secret Message */}
         <p
           style={{
-            fontSize: '0.88rem',
+            fontSize: '0.92rem',
             color: '#637567',
             marginBottom: '22px',
+            lineHeight: 1.5,
           }}
         >
           {status === 'success' ? passwordScreen.successMessage : passwordScreen.subtitle}
@@ -226,7 +228,7 @@ export default function PasswordScreen({ onUnlock }) {
           })}
         </div>
 
-        {/* Optional Hint message */}
+        {/* Hint message */}
         <div style={{ minHeight: '26px', marginBottom: '14px' }}>
           {showHint && status !== 'success' && (
             <p

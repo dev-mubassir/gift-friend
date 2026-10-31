@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
-import { Camera, Sparkles, Heart, Maximize2 } from 'lucide-react';
+import { Camera, Maximize2 } from 'lucide-react';
 import { siteConfig } from '../config/content';
 import Lightbox from './Lightbox';
-import { BlossomIcon, BotanicalSprig } from './BotanicalDecorations';
+import { BlossomIcon } from './BotanicalDecorations';
 
 /**
- * Screen 5: Photo Memories Gallery
- * Polaroid-style frames with subtle rotations, washi tape,
- * handwritten captions, full-screen lightbox, and swipe navigation.
+ * Screen 6: Photo Moments Gallery
+ * Polaroid-style frames featuring Tamanna's genuine photographs,
+ * subtle rotations, washi tape, handwritten captions, and full-screen swipe lightbox.
  */
 export default function PhotoGallery() {
-  const { photos } = siteConfig;
+  const { photos, photoGallery } = siteConfig;
   const [activePhotoIndex, setActivePhotoIndex] = useState(null);
   const [brokenImages, setBrokenImages] = useState({});
 
@@ -36,20 +36,20 @@ export default function PhotoGallery() {
         <div style={{ marginBottom: '14px' }}>
           <span className="botanical-tag">
             <Camera size={13} />
-            <span>Cherished Memories</span>
+            <span>{photoGallery?.badge || "Little Moments"}</span>
           </span>
         </div>
 
         <h2
           className="font-serif"
           style={{
-            fontSize: 'clamp(1.9rem, 4vw, 2.6rem)',
-            fontWeight: 500,
+            fontSize: 'clamp(2rem, 4.5vw, 2.7rem)',
+            fontWeight: 600,
             color: '#2F3E33',
             marginBottom: '10px',
           }}
         >
-          Moments That Bloom In Memory
+          {photoGallery?.heading || "A Few Little Moments 📸"}
         </h2>
 
         <p
@@ -57,7 +57,7 @@ export default function PhotoGallery() {
           style={{
             fontSize: '1.45rem',
             color: '#526B53',
-            maxWidth: '480px',
+            maxWidth: '520px',
             margin: '0 auto',
           }}
         >
@@ -92,7 +92,7 @@ export default function PhotoGallery() {
               onClick={() => setActivePhotoIndex(index)}
               role="button"
               tabIndex={0}
-              aria-label={`Open photo memory: ${photo.caption}`}
+              aria-label={`Open photo: ${photo.caption}`}
               onKeyDown={(e) => {
                 if (e.key === 'Enter' || e.key === ' ') {
                   setActivePhotoIndex(index);
@@ -102,11 +102,11 @@ export default function PhotoGallery() {
               {/* Cute Washi Tape at Top */}
               <div className={`washi-tape ${washiClass}`} />
 
-              {/* Photo Area */}
+              {/* Photo Area with face-friendly framing */}
               <div
                 style={{
                   width: '100%',
-                  aspectRatio: '4 / 4.8',
+                  aspectRatio: '4 / 4.6',
                   borderRadius: '2px',
                   overflow: 'hidden',
                   backgroundColor: '#F7F3E8',
@@ -127,12 +127,13 @@ export default function PhotoGallery() {
                       width: '100%',
                       height: '100%',
                       objectFit: 'cover',
+                      objectPosition: 'center 20%', // Keeps faces perfectly centered and uncropped
                       display: 'block',
                       transition: 'transform 0.4s ease',
                     }}
                   />
                 ) : (
-                  /* Attractive Botanical Placeholder Card */
+                  /* Fallback if an image is missing */
                   <div
                     style={{
                       display: 'flex',
@@ -182,7 +183,7 @@ export default function PhotoGallery() {
                     width: '32px',
                     height: '32px',
                     borderRadius: '50%',
-                    background: 'rgba(255, 253, 245, 0.85)',
+                    background: 'rgba(255, 253, 245, 0.88)',
                     backdropFilter: 'blur(4px)',
                     display: 'flex',
                     alignItems: 'center',
@@ -200,10 +201,10 @@ export default function PhotoGallery() {
                 <p
                   className="font-script"
                   style={{
-                    fontSize: '1.45rem',
+                    fontSize: '1.5rem',
                     color: '#2F3E33',
                     lineHeight: 1.25,
-                    minHeight: '2.4rem',
+                    minHeight: '2.2rem',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',

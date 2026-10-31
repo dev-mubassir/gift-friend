@@ -1,12 +1,11 @@
 import React from 'react';
 import { Sparkles, ChevronDown } from 'lucide-react';
 import { siteConfig } from '../config/content';
-import { BotanicalSprig, BlossomIcon, BotanicalDivider } from './BotanicalDecorations';
+import { BlossomIcon, BotanicalDivider } from './BotanicalDecorations';
 
 /**
  * Screen 4: Main Greeting Hero
- * Elegant welcoming hero section with delicate typography,
- * original friendship compliment, and floral aesthetics.
+ * Warm, encouraging friendship greeting celebrating Tamanna's strength.
  */
 export default function MainGreeting({ onScrollNext }) {
   const { greeting, recipient } = siteConfig;
@@ -14,8 +13,8 @@ export default function MainGreeting({ onScrollNext }) {
   return (
     <section
       style={{
-        minHeight: '92vh',
-        minHeight: '92dvh',
+        minHeight: '90vh',
+        minHeight: '90dvh',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
@@ -34,7 +33,7 @@ export default function MainGreeting({ onScrollNext }) {
           margin: '0 auto',
         }}
       >
-        {/* Cute Botanical Badge */}
+        {/* Friendly Botanical Badge */}
         <div style={{ marginBottom: '18px' }}>
           <span className="botanical-tag">
             <Sparkles size={13} />
@@ -48,11 +47,11 @@ export default function MainGreeting({ onScrollNext }) {
           className="font-serif"
           style={{
             fontSize: 'clamp(2.1rem, 5.5vw, 3.4rem)',
-            fontWeight: 500,
+            fontWeight: 600,
             color: '#2F3E33',
             lineHeight: 1.25,
             letterSpacing: '-0.015em',
-            marginBottom: '20px',
+            marginBottom: '16px',
             textWrap: 'balance',
           }}
         >
@@ -61,27 +60,27 @@ export default function MainGreeting({ onScrollNext }) {
 
         <BotanicalDivider />
 
-        {/* Short Original Friendship Compliment */}
+        {/* Main Encouraging Paragraph */}
         <p
           style={{
-            fontSize: 'clamp(1.05rem, 2.8vw, 1.25rem)',
-            color: '#526B53',
-            lineHeight: 1.7,
-            maxWidth: '560px',
-            margin: '0 auto 34px auto',
-            fontWeight: 400,
+            fontSize: 'clamp(1.05rem, 2.6vw, 1.2rem)',
+            color: '#3D5042',
+            lineHeight: 1.75,
+            maxWidth: '600px',
+            margin: '0 auto 30px auto',
+            fontWeight: 450,
           }}
         >
-          {greeting.subtitle}
+          {greeting.message}
         </p>
 
-        {/* Cute Name Callout Card */}
+        {/* Cute Friendship Cheering Pill */}
         <div
           style={{
             display: 'inline-block',
-            background: 'rgba(255, 253, 245, 0.85)',
+            background: 'rgba(255, 253, 245, 0.90)',
             backdropFilter: 'blur(8px)',
-            border: '1.5px solid rgba(168, 185, 154, 0.4)',
+            border: '1.5px solid rgba(168, 185, 154, 0.45)',
             borderRadius: '20px',
             padding: '12px 28px',
             boxShadow: 'var(--shadow-soft)',
@@ -91,12 +90,12 @@ export default function MainGreeting({ onScrollNext }) {
           <p
             className="font-script"
             style={{
-              fontSize: '1.8rem',
+              fontSize: '1.75rem',
               color: '#526B53',
               lineHeight: 1.2,
             }}
           >
-            Thank you for simply being you, {recipient.name} 🌷
+            Rooting for your tournament and cheering you on, {recipient.name}! 💪✨
           </p>
         </div>
 
@@ -104,7 +103,7 @@ export default function MainGreeting({ onScrollNext }) {
         <div style={{ marginTop: '10px' }}>
           <button
             onClick={onScrollNext}
-            aria-label="Scroll to photo memories"
+            aria-label="Scroll to motivation and memories"
             style={{
               display: 'inline-flex',
               flexDirection: 'column',

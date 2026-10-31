@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
-import { RotateCcw, Sparkles, Heart } from 'lucide-react';
+import { RotateCcw, Sparkles } from 'lucide-react';
 import { siteConfig } from '../config/content';
 import { BlossomIcon, DaisyFlower, BotanicalWreath } from './BotanicalDecorations';
 
 /**
  * Screen 8: Final Surprise
- * Final heartfelt blessing, interactive touch-to-plant flower blossoms,
- * sparkling ambient effects, and replay button.
+ * Final heartfelt encouragement for Tamanna's tournament,
+ * interactive touch-to-plant flower blossoms, and replay button.
  */
 export default function FinalSurprise({ onReplay, onTriggerBurst }) {
-  const { finalSurprise, recipient } = siteConfig;
+  const { finalSurprise } = siteConfig;
   const [plantedFlowers, setPlantedFlowers] = useState([]);
 
   // Plant a flower wherever user clicks or taps
@@ -19,7 +19,7 @@ export default function FinalSurprise({ onReplay, onTriggerBurst }) {
     const y = (e.clientY || (e.touches && e.touches[0].clientY)) - rect.top;
 
     if (x !== undefined && y !== undefined) {
-      const flowerTypes = ['blossom', 'daisy', 'rose'];
+      const flowerTypes = ['blossom', 'daisy', 'blossom'];
       const colors = ['#E8C7CC', '#EBC9B5', '#FFFDF5', '#DCE8D5'];
       const newFlower = {
         id: Date.now() + Math.random(),
@@ -95,7 +95,6 @@ export default function FinalSurprise({ onReplay, onTriggerBurst }) {
           pointerEvents: 'auto',
         }}
         onClick={(e) => {
-          // Allow planting flowers inside the card too
           handleInteraction(e);
         }}
       >
@@ -128,17 +127,31 @@ export default function FinalSurprise({ onReplay, onTriggerBurst }) {
           {finalSurprise.heading}
         </h2>
 
-        {/* Subtitle */}
+        {/* Message */}
         <p
           style={{
             fontSize: '1.05rem',
-            color: '#526B53',
-            lineHeight: 1.65,
-            maxWidth: '440px',
-            margin: '0 auto 24px auto',
+            color: '#344738',
+            lineHeight: 1.7,
+            maxWidth: '460px',
+            margin: '0 auto 20px auto',
+            fontWeight: 450,
           }}
         >
-          {finalSurprise.subheading}
+          {finalSurprise.message}
+        </p>
+
+        {/* Final Small Line */}
+        <p
+          className="font-script"
+          style={{
+            fontSize: '1.65rem',
+            color: '#526B53',
+            marginBottom: '28px',
+            lineHeight: 1.3,
+          }}
+        >
+          "{finalSurprise.finalLine}"
         </p>
 
         {/* Interactive Garden Hint */}
@@ -180,9 +193,9 @@ export default function FinalSurprise({ onReplay, onTriggerBurst }) {
       </div>
 
       {/* Sweet Sign-off */}
-      <div style={{ marginTop: '28px', opacity: 0.8 }}>
+      <div style={{ marginTop: '28px', opacity: 0.85 }}>
         <p className="font-script" style={{ fontSize: '1.4rem', color: '#526B53' }}>
-          always wishing you peace, flowers & joy ♡
+          always cheering for you, Tamanna! 💚💪
         </p>
       </div>
     </section>
