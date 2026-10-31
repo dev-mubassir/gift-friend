@@ -1,0 +1,236 @@
+/* ==========================================================================
+   GLOBAL BOTANICAL THEME STYLES
+   Warm cream, soft ivory, sage green, and delicate floral accents
+   ========================================================================== */
+
+@import './animations.css';
+
+:root {
+  --color-warm-cream: #F7F3E8;
+  --color-soft-ivory: #FFFDF5;
+  --color-sage-green: #A8B99A;
+  --color-light-green: #DCE8D5;
+  --color-dark-botanical: #526B53;
+  --color-soft-peach: #EBC9B5;
+  --color-muted-pink: #E8C7CC;
+  --color-warm-gold: #D4A373;
+  --color-text-dark: #2F3E33;
+  --color-text-muted: #637567;
+  --color-border-subtle: rgba(168, 185, 154, 0.35);
+
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-handwritten: 'Caveat', cursive;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  --shadow-soft: 0 8px 24px -4px rgba(82, 107, 83, 0.08), 0 4px 12px -2px rgba(82, 107, 83, 0.04);
+  --shadow-medium: 0 16px 36px -6px rgba(82, 107, 83, 0.12), 0 6px 16px -4px rgba(82, 107, 83, 0.06);
+  --shadow-polaroid: 0 14px 30px -8px rgba(51, 65, 57, 0.16), 0 6px 14px -3px rgba(51, 65, 57, 0.08);
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --radius-full: 9999px;
+}
+
+/* Base resets */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  min-height: 100vh;
+  min-height: 100dvh;
+  background-color: var(--color-warm-cream);
+  color: var(--color-text-dark);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  overflow-x: hidden;
+  position: relative;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(235, 201, 181, 0.15) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(220, 232, 213, 0.25) 0%, transparent 45%),
+    radial-gradient(circle at 50% 50%, rgba(232, 199, 204, 0.12) 0%, transparent 50%);
+  background-attachment: fixed;
+}
+
+/* Safe area padding for mobile devices */
+.safe-area-bottom {
+  padding-bottom: env(safe-area-inset-bottom, 16px);
+}
+
+/* Typography Helpers */
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.font-script {
+  font-family: var(--font-handwritten);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-warm-cream);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-sage-green);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-dark-botanical);
+}
+
+/* Interactive elements */
+button, a {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+}
+
+/* Botanical Button Component */
+.btn-botanical {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: linear-gradient(135deg, var(--color-dark-botanical) 0%, #3d523e 100%);
+  color: var(--color-soft-ivory);
+  padding: 14px 28px;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: var(--radius-full);
+  box-shadow: 0 8px 20px -4px rgba(82, 107, 83, 0.35);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+  min-height: 48px;
+}
+
+.btn-botanical:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px -4px rgba(82, 107, 83, 0.45);
+  background: linear-gradient(135deg, #445945 0%, #344735 100%);
+}
+
+.btn-botanical:active {
+  transform: translateY(1px) scale(0.98);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--color-soft-ivory);
+  color: var(--color-dark-botanical);
+  border: 1.5px solid var(--color-light-green);
+  padding: 12px 24px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-soft);
+  transition: all 0.2s ease;
+  min-height: 44px;
+}
+
+.btn-secondary:hover {
+  background: #fbf8ee;
+  border-color: var(--color-sage-green);
+  transform: translateY(-1px);
+}
+
+/* Washi Tape Accent for Polaroids and Letter */
+.washi-tape {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-1deg);
+  width: 70px;
+  height: 22px;
+  background: rgba(220, 232, 213, 0.7);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(2px);
+  z-index: 5;
+  clip-path: polygon(
+    0% 0%, 5% 40%, 0% 100%,
+    95% 100%, 100% 60%, 95% 0%
+  );
+}
+
+.washi-tape.peach {
+  background: rgba(235, 201, 181, 0.75);
+}
+
+.washi-tape.pink {
+  background: rgba(232, 199, 204, 0.75);
+}
+
+/* Polaroid Card Styles */
+.polaroid-frame {
+  background: var(--color-soft-ivory);
+  padding: 12px 12px 18px 12px;
+  border-radius: 4px;
+  box-shadow: var(--shadow-polaroid);
+  border: 1px solid rgba(168, 185, 154, 0.25);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
+  position: relative;
+  cursor: pointer;
+}
+
+.polaroid-frame:hover {
+  transform: translateY(-6px) scale(1.02) !important;
+  box-shadow: 0 20px 35px -8px rgba(51, 65, 57, 0.22);
+  z-index: 10;
+}
+
+/* Vintage Paper Letter Texture */
+.letter-paper {
+  background: var(--color-soft-ivory);
+  background-image: 
+    linear-gradient(rgba(168, 185, 154, 0.07) 1px, transparent 1px);
+  background-size: 100% 28px;
+  box-shadow: var(--shadow-medium);
+  border: 1px solid rgba(168, 185, 154, 0.25);
+  position: relative;
+}
+
+/* Cute pill tags */
+.botanical-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 14px;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-weight: 600;
+  border-radius: var(--radius-full);
+  background: var(--color-light-green);
+  color: var(--color-dark-botanical);
+}

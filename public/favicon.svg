@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="petalGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E8C7CC" />
+      <stop offset="100%" stop-color="#EBC9B5" />
+    </linearGradient>
+    <linearGradient id="leafGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#DCE8D5" />
+      <stop offset="100%" stop-color="#A8B99A" />
+    </linearGradient>
+  </defs>
+  <!-- Background circle -->
+  <circle cx="32" cy="32" r="30" fill="#FFFDF5" stroke="#DCE8D5" stroke-width="2"/>
+  <!-- Stem and leaf -->
+  <path d="M32 34 Q30 50 32 54" stroke="#526B53" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M32 44 Q23 41 24 35 Q30 38 32 44" fill="url(#leafGrad)" stroke="#526B53" stroke-width="1"/>
+  <path d="M32 42 Q41 39 40 33 Q34 36 32 42" fill="url(#leafGrad)" stroke="#526B53" stroke-width="1"/>
+  <!-- Flower Petals -->
+  <circle cx="32" cy="23" r="7" fill="url(#petalGrad)" opacity="0.95"/>
+  <circle cx="23" cy="28" r="7" fill="url(#petalGrad)" opacity="0.95"/>
+  <circle cx="41" cy="28" r="7" fill="url(#petalGrad)" opacity="0.95"/>
+  <circle cx="27" cy="37" r="7" fill="url(#petalGrad)" opacity="0.95"/>
+  <circle cx="37" cy="37" r="7" fill="url(#petalGrad)" opacity="0.95"/>
+  <!-- Flower Center -->
+  <circle cx="32" cy="30" r="5" fill="#D4A373"/>
+  <circle cx="32" cy="30" r="3" fill="#FFFDF5"/>
+</svg>
