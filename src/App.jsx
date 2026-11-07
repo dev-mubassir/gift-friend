@@ -11,12 +11,31 @@ import FlowerRain from './components/FlowerRain';
 import { useAudio } from './hooks/useAudio';
 import { siteConfig } from './config/content';
 
+// Independent Butterfly Greeting Experience Components
+import { ButterflyGate } from './components/ButterflyEntry/ButterflyGate';
+import { GreetingGarden } from './components/ButterflyGreeting/GreetingGarden';
+
 export default function App() {
-  // Navigation states: 'welcome' | 'password' | 'garden'
+  // Experience Switch: 'classic' | 'butterfly-gate' | 'butterfly-garden'
+  const [experience, setExperience] = useState(() => {
+    if (typeof window !== 'undefined') {
+      const search = window.location.search;
+      const hash = window.location.hash;
+      if (search.includes('butterfly') || hash.includes('butterfly')) {
+        return 'butterfly-gate';
+      }
+    }
+    return 'classic';
+  });
+
+  // Dynamic visitor name for the Butterfly experience
+  const [butterflyVisitorName, setButterflyVisitorName] = useState('Tamanna');
+
+  // Navigation states for Classic Experience: 'welcome' | 'password' | 'garden'
   const [currentScreen, setCurrentScreen] = useState('welcome');
   const [flowerBurst, setFlowerBurst] = useState(false);
 
-  // Background Audio Controller - starts at 80s (1:20)
+  // Background Audio Controller - starts at 80s (1:20) for classic experience
   const audio = useAudio(siteConfig.music.src, {
     autoPlay: false,
     loop: siteConfig.music.loop,
@@ -67,10 +86,50 @@ export default function App() {
     }
   };
 
+  // =========================================================================
+  // 1. BUTTERFLY GREETING CARD ENTRY FLOW (Passcode: 0143)
+  // =========================================================================
+  if (experience === 'butterfly-gate') {
+    return (
+      <ButterflyGate
+        onBackToClassic={() => {
+          setExperience('classic');
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }}
+        onProceedToGarden={(name) => {
+          setButterflyVisitorName(name);
+          setExperience('butterfly-garden');
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }}
+      />
+    );
+  }
+
+  // =========================================================================
+  // 2. BUTTERFLY GREETING GARDEN EXPERIENCE
+  // =========================================================================
+  if (experience === 'butterfly-garden') {
+    return (
+      <GreetingGarden
+        visitorName={butterflyVisitorName}
+        onBackToClassic={() => {
+          setExperience('classic');
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }}
+        onReplayCard={() => {
+          setExperience('butterfly-gate');
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }}
+      />
+    );
+  }
+
+  // =========================================================================
+  // 3. CLASSIC BOTANICAL EXPERIENCE (Untouched 5656 Flow)
+  // =========================================================================
   return (
     <div
       style={{
-        minHeight: '100vh',
         minHeight: '100dvh',
         position: 'relative',
         overflowX: 'hidden',
@@ -86,11 +145,17 @@ export default function App() {
       {/* Screen 1: Welcome Screen */}
       {currentScreen === 'welcome' && (
         <div className="animate-fade-in-up">
-          <WelcomeScreen onStart={handleStart} />
+          <WelcomeScreen
+            onStart={handleStart}
+            onOpenButterfly={() => {
+              setExperience('butterfly-gate');
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
+          />
         </div>
       )}
 
-      {/* Screen 2: Secret Password Screen */}
+      {/* Screen 2: Secret Password Screen (5656) */}
       {currentScreen === 'password' && (
         <div className="animate-fade-in-scale">
           <PasswordScreen onUnlock={handleUnlock} />

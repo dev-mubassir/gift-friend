@@ -4,6 +4,9 @@
    ========================================================================== */
 
 @import './animations.css';
+@import './butterfly-card.css';
+@import './butterfly-motion.css';
+@import './butterfly-greeting.css';
 
 :root {
   --color-warm-cream: #F7F3E8;

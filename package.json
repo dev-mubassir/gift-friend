@@ -11,6 +11,7 @@
     "keep-alive": "node scripts/keep_alive.js"
   },
   "dependencies": {
+    "gsap": "^3.15.1",
     "lucide-react": "^1.66.0",
     "react": "^19.3.1",
     "react-dom": "^19.3.1"

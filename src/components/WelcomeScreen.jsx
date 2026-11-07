@@ -8,7 +8,7 @@ import { BotanicalWreath, BlossomIcon, BotanicalSprig } from './BotanicalDecorat
  * Opening scene with botanical wreath, volume notice,
  * and supportive friendship introduction for Tamanna.
  */
-export default function WelcomeScreen({ onStart }) {
+export default function WelcomeScreen({ onStart, onOpenButterfly }) {
   const { welcome } = siteConfig;
 
   return (
@@ -151,6 +151,33 @@ export default function WelcomeScreen({ onStart }) {
             <ArrowRight size={18} />
           </button>
         </div>
+
+        {/* Independent Butterfly Greeting Card Entry Pill */}
+        {onOpenButterfly && (
+          <div style={{ marginTop: '16px' }}>
+            <button
+              onClick={onOpenButterfly}
+              type="button"
+              style={{
+                background: 'rgba(255, 240, 243, 0.85)',
+                border: '1.5px dashed rgba(232, 160, 175, 0.65)',
+                borderRadius: '9999px',
+                padding: '8px 20px',
+                fontSize: '0.88rem',
+                fontWeight: 600,
+                color: '#8B263E',
+                cursor: 'pointer',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px',
+                transition: 'all 0.25s ease',
+                boxShadow: '0 2px 8px rgba(214, 40, 57, 0.08)',
+              }}
+            >
+              <span>🦋</span> Open Butterfly Card
+            </button>
+          </div>
+        )}
       </div>
 
       {/* Footer subtle note */}
